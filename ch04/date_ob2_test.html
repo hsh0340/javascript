@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>남은 일 수 계산</title>
+  <script>
+    // 현재 날짜부터 연말까지 며칠이 남았는지
+    let today = new Date();
+    let nowYear = today.getFullYear(); // 연도 정보 가져오는 메서드
+
+    let theDate = new Date(nowYear, 11, 31); // 올해 연말에 대한 날짜 정보 객체를 생성
+    let diffDate = theDate.getTime() - today.getTime(); // 특정날짜 - 현재날짜(밀리초단위)
+    // getTime() : 1970년 1월 1일 부터 경과된 시간을 밀리초로 표기함
+
+    let result = Math.ceil(diffDate / (60 * 1000 * 60 * 24)); // Math.ceil : 반올림
+    // result : 밀리초 -> * 1000 하면 초 -> * 60 하면 분 -> * 60 하면 한시간 -> * 24 하면 일
+    document.write("연말 D-Day : " + result + "일 남았습니다.")
+  </script>
+  <!-- 
+    남은 일 수(밀리초) = 특정 날짜 객체 - 현재 날짜 객체
+   -->
+</head>
+<body>
+  
+</body>
+</html>
