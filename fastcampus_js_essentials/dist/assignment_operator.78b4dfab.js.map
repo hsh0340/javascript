@@ -1,0 +1,1 @@
+{"version":3,"sources":["assignment_operator.js"],"names":["a","console","log"],"mappings":"AAAA;AAEA,IAAIA,CAAC,GAAG,CAAR,EACA;;AACAA,CAAC,IAAI,CAAL;AACAC,OAAO,CAACC,GAAR,CAAYF,CAAZ,GAAgB","file":"assignment_operator.78b4dfab.js","sourceRoot":"..","sourcesContent":["// 할당 연산자(assignment operator)\n\nlet a = 2\n// a = a + 1\na += 1\nconsole.log(a); // 3"]}
