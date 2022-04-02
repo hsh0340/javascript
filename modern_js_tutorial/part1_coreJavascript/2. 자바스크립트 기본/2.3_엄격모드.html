@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2.3 엄격모드</title>
+</head>
+
+<body>
+<!--
+  ES5에서 새로운 기능 생기고, 기존 기능 중 일부 변경됨.
+  기존 기능 변경 -> 하위 호환성 문제 생김 -> 변경사항이 ES5 기본모드에서 활성화 되지 않도록 설계됨.
+  엄격모드(strict)를 활성화 하면 변경사항 활성화 -> 스크립트 전체가 모던한 방식으로 동작
+  엄격모드는 한번 적용되면 돌이킬 수 없음.
+-->
+<script>
+  "use strict";
+  // 이 코드는 모던한 방식으로 실행됨
+  // 스크립트 최상단 또는 함수 본문 맨 앞에 선언(함수 본문에 선언하면 해당 함수만 엄격모드로 실행)
+</script>
+</body>
+
+</html>

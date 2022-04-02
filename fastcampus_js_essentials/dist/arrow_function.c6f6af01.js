@@ -117,45 +117,21 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"getRandom.js":[function(require,module,exports) {
-"use strict";
+})({"arrow_function.js":[function(require,module,exports) {
+// 화살표 함수
+// () => {} vs function () {}
+var double = function double(x) {
+  return x * 2;
+};
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = random;
+console.log('double: ', double(7));
 
-function random() {
-  return Math.floor(Math.random() * 10);
-}
-},{}],"switch_statement.js":[function(require,module,exports) {
-"use strict";
+var doubleArrow = function doubleArrow(x) {
+  return x * 2;
+};
 
-var _getRandom = _interopRequireDefault(require("./getRandom"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-// 조건문 (Switch statement)
-var a = (0, _getRandom.default)();
-
-switch (a) {
-  case 0:
-    console.log('a is 0');
-    break;
-  // 하나의 케이스가 끝나면 break 작성
-
-  case 2:
-    console.log('a is 2');
-    break;
-
-  case 4:
-    console.log('a is 4');
-    break;
-
-  default:
-    console.log('rest ...');
-}
-},{"./getRandom":"getRandom.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+console.log('doubleArrow : ', doubleArrow(7));
+},{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -359,5 +335,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["node_modules/parcel-bundler/src/builtins/hmr-runtime.js","switch_statement.js"], null)
-//# sourceMappingURL=/switch_statement.f6f4f3f7.js.map
+},{}]},{},["node_modules/parcel-bundler/src/builtins/hmr-runtime.js","arrow_function.js"], null)
+//# sourceMappingURL=/arrow_function.c6f6af01.js.map

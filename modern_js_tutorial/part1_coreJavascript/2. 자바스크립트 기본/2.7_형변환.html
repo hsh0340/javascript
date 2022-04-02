@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2.7 형 변환</title>
+</head>
+<body>
+  <!-- 
+    형 변환(type conversion) : 함수와 연산자에 전달되는 값이 대부분 적절한 자료형으로 자동 변환되는 것
+    ex) alert가 전달받은 값의 자료형과 관계없이 이를 문자열로 자동 변환하여 보여주는 것, 수학 관련 연산자가 전달받은 값을 숫자로 변환하는 경우
+  -->
+  <script>
+    // 문자형으로의 변환
+    // 문자형으로의 형 변환은 문자형의 값이 필요할 때 일어남.????
+    // alert 메서드는 매개변수로 문자형을 받기 때문에, alert(value)에서 value는 문자형이어야함
+    // 다른 형의 값을 전달받으면 이 값은 문자형으로 자동 변환됨
+    // String(value) 함수를 호출해 전달받은 값을 문자열로 변환할 수도 있음
+    let value = true;
+    alert(typeof value); // boolean
+
+    value = String(value); // 변수 value엔 문자열 'true'가 저장됨
+    alert(typeof value); // string
+
+    // 숫자형으로 변환
+    // 수학과 관련된 함수와 표현식에서 자동으로 일어남
+    alert('6' / '2'); // 3, 문자열이 숫자형으로 자동변환된 후 연산이 수행됨
+    // Number(value) 함수를 사용하면 주어진 값(value)를 숫자형으로 명시해서 변환 가능
+    let str = '123';
+    alert(typeof str); // string
+
+    let num = Number(str); // 문자열 '123'이 숫자 123으로 변환됨
+    alert(typeof num); // number 
+    // 숫자 이외의 글자가 들어가 있는 문자를 숫자형으로 변환하려고 하면 그결과는 NaN이 된다.
+    let age = Number('임의의 문자열 123');
+    alert(age); // NaN, 형 변환이 실패합니다.
+
+    alert(Number('   123   ')); // 123
+    // 123, string을 형변환 하면 문자열 처음과 끝 공백 제거.
+    // 공백 제거 후 남아있는 문자열 없으면 0, 아니면 숫자를 읽음. 변환 실패하면 NaN
+    alert(Number('123z')); // NaN ('z'를 숫자로 변환하는 데 실패함)
+    alert(Number(true)); // 1
+    alert(Number(false)); // 0
+
+    // 불린형으로 변환
+    // 논리 연산 수행할 때 발생. Boolean(value)를 호출하면 형변환 수행
+    // 숫자 0, 빈 문자열, undefined, NaN -> false
+    // 그외의 값은 true
+    alert(Boolean(1)); // 숫자 1(true)
+    alert(Boolean(0)); // 숫자 0(false)
+    alert(Boolean('hello')); // 문자열(true)
+    alert(Boolean('')); // 빈 문자열(false)
+    // 문자열 "0"은 true 임
+
+    
+    
+  </script>
+</body>
+</html>

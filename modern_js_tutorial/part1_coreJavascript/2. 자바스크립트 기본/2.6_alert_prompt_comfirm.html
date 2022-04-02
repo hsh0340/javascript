@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2.6 alert, prompt, confirm을 이용한 상호작용</title>
+</head>
+
+<body>
+  <script>
+    // alert : 사용자가 확인(ok)버튼 누를 때 까지 메시지를 보여주는 창이 계속 떠있게 됨
+    alert('Hello');
+    // 메시지가 있는 작은 창을 모달 창(modal window)라고 부름.
+    // 페이지의 나머지 부분과 상호작용 불가. 확인 버튼 누르기 전까지 바깥 버튼 누른다던가 못함
+
+    // prompt
+    // prompt 함수는 두개의 인수를 받음
+    // result = prompt(title, [default]);
+    // 함수가 실행되면 텍스트 메시지와 입력 필드(input field), 확인(ok)및 취소(cancle) 버튼이 있는 모달창을 띄워줌
+    // title : 사용자에게 보여줄 문자열, default : 입력필드의 초깃값(선택값)
+    // prompt 함수는 사용자가 입력필드에 기재한 문자열을 반환. 입력을 취소한 경우는 null이 반환
+    let age = prompt('나이를 입력해주세요.', 100);
+    alert(`당신의 나이는 ${age}살 입니다.`); // 당신의 나이는 100살 입니다.
+
+    // 컨펌 대화상자
+    // result = confirm(question);
+    // confirm 함수는 매개변수로 받은 question(질문)과 확인 및 취소 버튼이 있는 모달창을 보여줌
+    // 사용자가 확인 버튼을 누르면 true, 그 외는 false 반환
+    let isBoss = confirm('당신이 주인인가요?');
+    alert(isBoss); // 확인 버튼을 눌렀다면 true가 출력
+
+    let userName = prompt('사용자의 이름은 무엇인가요?', '홍길동');
+    alert(`사용자의 이름은 ${userName}입니다.`);
+  </script>
+</body>
+
+</html>
