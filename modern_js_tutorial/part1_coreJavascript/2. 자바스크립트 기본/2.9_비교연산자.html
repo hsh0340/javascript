@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2.9 비교 연산자</title>
+</head>
+
+<body>
+  <!--
+    - 보다 큼, 작음 : a > b, a < b
+    - 보다 크거나, 작거나 같음 : a >= b, a <= b
+    - 같음(동등) : a == b
+    - 같지 않음(부등) : a != b
+  -->
+  <script>
+    // 불린형 반환
+    // true가 반환되면 긍정, 참, 사실을 의미
+    // false가 반환되면 부정, 거짓, 사실이 아님을 의미
+    alert(2 > 1); // true
+    alert(2 == 1); // false
+    alert(2 != 1) // true
+    // 반환된 불린값은 변수에 할당 가능
+    let result = 5 > 4; // 비교 결과를 변수에 할당
+    alert(result); // true
+
+    // 자바스크립트는 유니코드순으로 문자열을 비교함.
+    alert('Z' > 'A'); // true
+    alert('Glow' > 'Glee'); // true
+    alert('Bee' > 'Be') // true
+    // 1. 두 문자열의 첫 글자를 비교
+    // 2. 첫 번째 문자열의 첫글자가 다른 문자열의 첫 글자보다 크면, 첫번째 문자열이 두번째 문자열보다 큼
+    // 3. 두 문자열의 첫글자가 같으면 두번째 글자를 같은 방식으로 비교
+    // 4. 글자 간 비교가 끝날 때 까지 이 과정을 반복
+    // 5. 비교가 종료되었고 문자열의 길이도 같다면 두 문자열은 동일하다고 결론. 두 문자열의 길이가 다르면 길이가 긴 문자열이 더 큼
+
+    // 비교하려는 값의 자료형이 다르면 자바스크립트는 이 값들을 숫자형으로 바꿈
+    alert('2' > 1); // true, 문자열 '2'가 숫자 2로 변환된 후 비교 진행
+    alert('01' == 1); // true, 문자열 '01'이 숫자1로 변환된 후 비교 진행
+    // 불린 값의 경우 true는 1, false는 0을 변환된 후 비교
+    alert(true == 1); // true
+    alert(false == 0); // true
+
+    // 동등연산자는 0과 false를 구분하지 못함.
+    // 일치 연산자(strict equality operator) === 사용하면 형변환 없이 값 비교가능
+    // 자료형의 동등 여부까지 검사.
+    alert(0 === false); // false, 피연산자의 형이 다르기 때문
+    alert(null === undefined); // false, 두 값의 자료형이 다르기 때문에 일치 비교시 거짓이 반환
+    alert(null == undefined); // true, 이건 그냥 규칙
+    alert(null > 0); // false, null이 숫자형으로 변환돼 0이 됨.
+    alert(null == 0); // false, 동등연산자는 피연산자가 undefined나 null일 때 형변환을 하지 않음.
+    alert(null >= 0); // true, null이 숫자형으로 변환돼 0이 됨.
+
+    // undefined를 다른값과 비교해서는 안됨.
+    alert(undefined > 0); // false, undefined가 NaN으로 변환되는데, NaN이 피연산자일 경우 비교연산자는 항상 false 반환
+    alert(undefined < 0); // false, undefined가 NaN으로 변환되는데, NaN이 피연산자일 경우 비교연산자는 항상 false 반환
+    alert(undefined == 0); // false, undefined는 null이나 undefined와 같고, 그 외의 값과는 같지 않음
+  </script>
+</body>
+
+</html>
