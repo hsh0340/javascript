@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2.13 while과 for 반복문</title>
+</head>
+<body>
+  <script>
+    // while 반복문
+    // while (condition) {
+      // 코드
+      // '반복문 본문(body)' 이라 불림
+    // }
+    // condition(조건)이 truthy 이면 반복문 본문의 코드가 실행됨.
+    let i = 0;
+    while (i < 3) {
+      // 0, 1, 2 가 출력됩니다.
+      alert(i);
+      i++;
+    }
+    // 반복문 본문이 한 번 실행되는 것을 반복(iteration)이라고 부름.
+    // 반복문 조건엔 모든 표현식, 변수가 올 수 있다.조건은 평가 후에 불린값으로 변경됨
+
+    let j = 3;
+    while (j) {
+      // j 가 0이 되면 조건이 falsy 가 되므로 반복문이 멈춤.
+      alert(j);
+      j--;
+    }
+    // 본문이 한줄이면 대괄호 생략 가능
+    while (j) alert (j--);
+
+    // do-while 반복문
+    // do-while 문법을 사용하면 condition을 반복문 본문 아래로 옮길 수 있음
+    // do {
+    //   // 반복문 본문
+    // } while (condition);
+    // 본문이 먼저 실행되고, 조건을 확인한 후 조건이 truthy인 동안엔 본문이 계속 실행
+    let k = 0;
+    do {
+      alert(k);
+      k++
+    } while (k < 3);
+    // do-while 문법은 조건이 truthy인지 아닌지 상관 없이, 본문을 최소한 한 번이라도 실행하고 싶을 때만 사용해야함.
+    // 대다수의 상황에서는 do-while 보다 while문이 적합
+    
+    // for 반복문
+    // for (begin; condition; step) {
+      // 반복문 본문
+    // }
+    for (let i = 0; i < 3; i++) {
+      // 0, 1, 2 출력
+      alert(i);
+    }
+    // 1. begin을 실행함
+    // condition이 truthy이면 -> body를 실행한 후, step을 실행함
+    // condition이 truthy이면 -> body를 실행한 후, step을 실행함
+    // condition이 truthy이면 -> body를 실행한 후, step을 실행함
+    // ...
+    // 인라인으로 선언한 변수는 반복문 안에서만 접근 가능
+    // 정의되어있는 변수도 선언 가능
+
+    // for문의 구성요소를 생략하는 것도 가능
+    let a = 0;
+    for (; a < 3; a++) {
+      alert(a)
+    }
+  </script>
+</body>
+</html>
